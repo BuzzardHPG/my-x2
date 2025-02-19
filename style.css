@@ -1,0 +1,316 @@
+/* Basic Colors */
+:root {
+    --primary-color: #001524;       /* Dark Blue */
+    --secondary-color: #0B3B49;     /* Dark Teal */
+    --accent-color: #15616D;        /* Teal */
+    --light-color: #FFECD1;         /* Light Beige */
+    --dark-color: #78290F;          /* Dark Brown */
+    --background-light: #B1BEB0;    /* Light Gray */
+    --background-dark: #0B3B49;     /* Dark Teal */
+    --orange-color: #FF7D00;        /* Orange */
+    --orange-light: #FFB569;        /* Light Orange */
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light); /* خلفية فاتحة من ألوان الشركة */
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color); /* تغيير اللون عند التحويم */
+}
+
+/* Language Toggle Button Style */
+.language-button-style {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.language-button-style:hover {
+    background-color: var(--secondary-color); /* تغيير اللون عند التحويم */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    composes: language-button-style; /* تطبيق نفس التنسيق */
+}
+
+/* Language Toggle Button */
+#language-toggle {
+    composes: language-button-style; /* تطبيق نفس التنسيق */
+}
+
+/* Sections */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--light-color); /* خلفية فاتحة من ألوان الشركة */
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Home Cards */
+.card {
+    transition: transform 0.3s ease;
+    background-color: var(--light-color); /* خلفية فاتحة من ألوان الشركة */
+    border: 1px solid var(--accent-color);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Section */
+.team-member img {
+    border-radius: 50%;
+    border: 3px solid var(--accent-color); /* إطار باللون الأخضر الداكن */
+}
+
+/* Course Cards */
+.course-card {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.course-card .card-body {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.course-card .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.course-card .course-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.course-card .btn {
+    width: 45%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: var(--accent-color); /* لون الأزرار الأخضر الداكن */
+    border: none;
+    color: var(--light-color);
+    transition: background-color 0.3s ease;
+}
+
+.course-card .btn:hover {
+    background-color: var(--secondary-color); /* تغيير اللون عند التحويم */
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 15px;
+    background-color: var(--light-color); /* خلفية فاتحة من ألوان الشركة */
+    color: var(--primary-color);
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 20px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body h6 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: var(--primary-color);
+}
+
+.modal-body ul {
+    padding-left: 20px;
+}
+
+.modal-body ul li {
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 20px;
+    justify-content: center;
+}
+
+.modal-footer .btn {
+    background-color: var(--accent-color); /* لون الأزرار الأخضر الداكن */
+    border: none;
+    color: var(--light-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+    background-color: var(--secondary-color); /* تغيير اللون عند التحويم */
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--light-color);
+}
+
+body.dark-mode nav {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .section h2 {
+    color: var(--light-color);
+}
+
+body.dark-mode .course-card .card-title {
+    color: var(--light-color);
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--background-dark);
+    color: var(--light-color);
+}
+
+body.dark-mode .modal-title {
+    color: var(--light-color);
+}
+
+body.dark-mode .modal-body h6 {
+    color: var(--light-color);
+}
+
+body.dark-mode .modal-body ul li {
+    color: var(--light-color);
+}
+
+body.dark-mode .modal-footer .btn {
+    background-color: var(--accent-color); /* لون الأزرار الأخضر الداكن */
+    color: var(--light-color);
+}
+
+body.dark-mode .modal-footer .btn:hover {
+    background-color: var(--secondary-color); /* تغيير اللون عند التحويم */
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color); /* تغيير اللون عند التحويم */
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .social-icon {
+    color: var(--light-color);
+}
+
+body.dark-mode .social-icon:hover {
+    color: var(--accent-color); /* تغيير اللون عند التحويم */
+}
